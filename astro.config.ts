@@ -16,6 +16,9 @@ import astrowind from './vendor/integration';
 import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
 
 
+import netlify from '@astrojs/netlify';
+
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const hasExternalScripts = false;
@@ -23,8 +26,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  output: 'static',
-
+  output: 'server',
 
   integrations: [
     tailwind({
@@ -89,4 +91,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: netlify(),
 });
