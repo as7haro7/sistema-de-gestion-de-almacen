@@ -1,0 +1,44 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { systemData } from '~/content/texts';
+import StructuredText from '~/components/widgets/StructuredText.astro';
+import ImageCard from '~/components/widgets/ImageCard.astro';
+
+const metadata = {
+  title: 'Modelo De Comportamiento',
+};
+
+
+---
+
+<Layout metadata={metadata}>
+  <Hero tagline={systemData.projectTitle.concat(' ').concat(systemData.company)}>
+    <Fragment slot="title">
+      <span class="uppercase">Modelo De Comportamiento </span>
+      <br />
+      <!-- <span class="text-accent dark:text-white highlight">Modelo Ambiental</span> -->
+    </Fragment>
+
+    <Fragment slot="content">
+      <h1 class="text-xl font-bold text-left motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+        Diagrama de Flujo de Datos
+       </h1>
+      <StructuredText
+        freeText="El Diagrama de Flujo de Datos (DFD) es una herramienta visual utilizada para representar el flujo de información dentro del sistema. En el caso de este proyecto, el DFD permite identificar cómo los datos se mueven entre los diferentes actores del proceso de gestión de inventarios del Minimarket MAMIL’US, como la recepción de productos, la actualización de inventario y la generación de alertas. "
+      />
+      <ImageCard src="/diagramas/diagrama-flujo-datos.png" alt="Diagrama de Flujo de datos" />
+      <h1 class="text-xl font-bold text-left motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+        Diagrama Entidad-Relación (ER)
+       </h1>
+      <StructuredText
+        freeText="El Diagrama Entidad-Relación (ER) muestra las relaciones entre las distintas entidades del sistema, como los productos, proveedores, inventarios y transacciones. Este diagrama es crucial para modelar la base de datos del sistema, facilitando la creación de un esquema relacional que apoye la correcta gestión de los datos y la trazabilidad de los movimientos de inventarios. "
+      />
+      <ImageCard src="/diagramas/diagrama-er.png" alt="Diagrama Entodad-Relacion" />
+
+     
+    </Fragment>
+  </Hero>
+
+  <!--  -->
+</Layout>

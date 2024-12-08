@@ -1,0 +1,68 @@
+---
+
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { systemData } from '~/content/texts';
+
+const metadata = {
+  title: 'Objetivos especificos',
+};
+
+const items = [
+  {
+    title: "Analizar el estado actual de la gestión de inventarios",
+    description: "Identificar los procesos manuales existentes, los principales problemas y las necesidades del minimarket mediante entrevistas, encuestas y observación directa."
+  },
+  {
+    title: "Definir los requerimientos funcionales y no funcionales",
+    description: "Documentar las características esenciales que debe tener el sistema, como funcionalidades, tiempos de respuesta y usabilidad."
+  },
+  {
+    title: "Diseñar un modelo estructurado y orientado a objetos del sistema",
+    description: "Elaborar diagramas de contexto, diagramas de flujo de datos (DFD), diagramas de clases y casos de uso para modelar los componentes y el funcionamiento del sistema."
+  },
+  {
+    title: "Implementar herramientas tecnológicas de gestión de inventarios",
+    description: "Desarrollar el sistema utilizando bases de datos relacionales y tecnologías modernas de programación, asegurando un diseño escalable y eficiente."
+  },
+  {
+    title: "Capacitar al personal",
+    description: "Diseñar e impartir un programa de formación para el uso del sistema, garantizando su correcta adopción y operación."
+  },
+  {
+    title: "Evaluar el desempeño del sistema",
+    description: "Realizar pruebas funcionales y de rendimiento para validar su efectividad y realizar ajustes según los resultados obtenidos."
+  }
+];
+---
+
+<Layout metadata={metadata}>
+
+  <Hero tagline={systemData.projectTitle.concat(' ').concat(systemData.company)}>
+
+    <Fragment slot="title">
+      <!-- LOREM <br /> -->
+      <span class="uppercase"> Objetivos especificos</span>
+    </Fragment>
+
+    <Fragment slot="content">
+      
+  <ol class={`grid grid-cols-1 md:grid-cols-${1} gap-y-8 md:gap-y-12`}>
+    {items.map((item) => (
+      <li class="max-w-none flex flex-col items-start motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade" >
+        <span class="font-bold text-xl mb-1">
+          {/* 🔵  */}
+           {item.title}</span>
+        {item.description && (
+          <p class="text-muted mt-1 text-justify text-xl">
+            {item.description}
+          </p>
+        )}
+      </li>
+    ))}
+  </ol>
+    </Fragment>
+  </Hero>
+
+  <!--  -->
+</Layout>
