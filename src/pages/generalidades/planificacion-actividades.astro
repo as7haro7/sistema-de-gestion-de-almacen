@@ -2,34 +2,34 @@
 
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import { systemData } from '~/content/texts';
+import ImageCard from '~/components/widgets/ImageCard.astro';
+
 
 const metadata = {
-  title: 'About us',
+  title: 'Planificación de Actividades',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <Hero tagline={systemData.projectTitle.concat(' ').concat(systemData.company)}>
 
-  <Hero
-    tagline="planificacion de actifidades"
-    
-  >
-  <!-- <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  > -->
     <Fragment slot="title">
-      LOREM <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      <span class="uppercase">Planificación de Actividades   </span> <br />
+      <!-- <span class="text-accent dark:text-white highlight">Método, Medios e Instrumentos de Investigación</span> -->
     </Fragment>
 
     <Fragment slot="subtitle">
-      Lorem
+      <!-- <h1 class="text-xl font-bold">Diagrama De Gantt</h1> -->
+      Diagrama De Gantt
     </Fragment>
+    <Fragment slot="content">
+      <div>
+        <ImageCard src="/diagramas/diagrama_gantt.jpg" alt="Diagrama De Gantt" />
+
+      </div>
+    </Fragment>
+
   </Hero>
 
   <!--  -->

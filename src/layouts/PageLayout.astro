@@ -22,10 +22,19 @@ const { metadata } = Astro.props;
   <slot name="header">
     <Header {...headerData} isSticky  showToggleTheme />
   </slot>
-  <main>
+  <main class="">
     <slot />
   </main>
-  <slot name="footer">
+  <slot name="footer" class="">
+    <div class="min-h-10 w-full "></div>
+    <div class="absolute inset-0 -z-10 h-full w-full ">
+      <!-- <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3B82F6,transparent)]"></div> -->
+      <div class="absolute bottom-0 left-0 right-0 top-0 -z-10 pointer-events-none bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#3B82F6,transparent)]"></div>
+
+      <!-- <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#E9D5FF,transparent)] dark:bg-[radial-gradient(circle_500px_at_50%_200px,#A855F7,transparent)]"></div> -->
+
+    </div>
+
     <Footer {...footerData} />
   </slot>
 </Layout>

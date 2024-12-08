@@ -1,0 +1,27 @@
+---
+const {
+  text = '',
+  sections = [],
+  freeText = '',
+  classes = '',
+} = Astro.props;
+
+const hasSections = sections.length > 0;
+const isFreeText = !!freeText;
+---
+
+<p class={`text-justify text-xl text-muted mt-4 motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ${classes}`}>
+  {hasSections ? (
+    <>
+      {text}{' '}
+      {sections.map(({ name, description }, index) => (
+        <Fragment key={index}>
+          <b class="font-semibold">{name}</b> {description}
+          {index < sections.length - 1 && '; '}
+        </Fragment>
+      ))}
+    </>
+  ) : (
+    isFreeText && freeText
+  )}
+</p>

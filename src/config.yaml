@@ -1,5 +1,5 @@
 site:
-  name: LogiStock
+  name: SisAlmacen 
   site: 'https://sistemadeinventario.com'
   base: '/' # Cambia solo si necesitas un nuevo path base para tu sitio
   trailingSlash: false

@@ -39,10 +39,6 @@ export const headerData = {
           href: getPermalink('/generalidades/metodo-medios-instrumentos'),
         },
         {
-          text: 'Justificación del método elegido',
-          href: getPermalink('/generalidades/justificacion-metodo'),
-        },
-        {
           text: 'Herramientas y técnicas utilizadas',
           href: getPermalink('/generalidades/herramientas-tecnicas'),
         },
@@ -62,11 +58,11 @@ export const headerData = {
       links: [
         {
           text: 'Modelo Ambiental',
-          href: getPermalink('/homes/saas'),
+          href: getPermalink('/analisis_diseño_estructurado/modelo-ambiental'),
         },
         {
           text: 'Modelo de Comportamiento',
-          href: getPermalink('/homes/startup'),
+          href: getPermalink('/analisis_diseño_estructurado/modelo-de-comportamiento'),
         },
         
       ],
@@ -76,15 +72,12 @@ export const headerData = {
       links: [
         {
           text: 'Diagrama de Casos de Uso',
-          href: getPermalink('/#features'),
+          href: getPermalink('/analisis-y-diseño-orientado-a-objetos/diagrama-de-casos-de-uso'),
         },
-        {
-          text: 'Diagramas de Secuencia',
-          href: getPermalink('/services'),
-        },
+      
         {
           text: 'Diagrama de Clases     ',
-          href: getPermalink('/pricing'),
+          href: getPermalink('/analisis-y-diseño-orientado-a-objetos/diagrama-de-clases'),
         },
         // {
         //   text: 'About us',

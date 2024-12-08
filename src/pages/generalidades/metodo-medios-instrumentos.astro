@@ -2,33 +2,28 @@
 
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import { systemData } from '~/content/texts';
+import StructuredText from '~/components/widgets/StructuredText.astro';
+
 
 const metadata = {
-  title: 'About us',
+  title: 'Método, Medios e Instrumentos de Investigación',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <Hero tagline={systemData.projectTitle.concat(' ').concat(systemData.company)}>
 
-  <Hero
-    tagline="metodo y medios de instrumentacion"
-    
-  >
-  <!-- <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  > -->
     <Fragment slot="title">
-      LOREM <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      <span class="uppercase">Método, Medios e Instrumentos de Investigación   </span> <br />
+      <!-- <span class="text-accent dark:text-white highlight">Método, Medios e Instrumentos de Investigación</span> -->
     </Fragment>
 
-    <Fragment slot="subtitle">
-      Lorem
+    <Fragment slot="content">
+      <!-- <h1 class="Justificación del método elegido."></h1> -->
+      <StructuredText freeText="Se emplea una metodología combinada estructurada y orientada a objetos para abordar tanto el análisis funcional como el diseño técnico del sistema. Este enfoque permite identificar y modelar las necesidades actuales del Minimarket Mamilus, mientras que facilita la implementación de un sistema robusto y adaptable."/>
+      <StructuredText freeText="La elección de herramientas cualitativas y cuantitativas en la etapa de investigación asegura un análisis integral del problema, combinando la percepción de los usuarios y el análisis técnico de los procesos. Esto permitirá diseñar un sistema personalizado que resuelva los desafíos específicos del negocio."/>
+
     </Fragment>
   </Hero>
 

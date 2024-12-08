@@ -1,34 +1,115 @@
 ---
-
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import { systemData } from '~/content/texts';
+import StructuredText from '~/components/widgets/StructuredText.astro';
+import ImageCard from '~/components/widgets/ImageCard.astro';
+
 
 const metadata = {
-  title: 'About us',
+  title: 'Arbol de problemas',
 };
+
+const columns = 1; // Cambia el valor según sea necesario
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    tagline="Arbol de problemas"
-    
-  >
-  <!-- <Hero
-    tagline="About us"
-    image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
-    }}
-  > -->
+  <Hero tagline={systemData.projectTitle.concat(' ').concat(systemData.company)}>
     <Fragment slot="title">
-      LOREM <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      <span class="uppercase">Arbol de problemas</span> <br />
+      <!-- <span class="text-accent dark:text-white highlight"> Arbol de problemas</span> -->
     </Fragment>
 
-    <Fragment slot="subtitle">
-      Lorem
+    <Fragment slot="content">
+      <h1 class="text-xl font-bold text-left motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ">Problema central:</h1>
+      <!-- <p class="text-xl text-muted text-left indent-1">Gestión ineficiente de inventarios en el Minimarket Mamilus.</p> -->
+
+      <StructuredText freeText={`Gestión ineficiente de inventarios en el Minimarket Mamilus.`} />
+      <h1 class="mt-2 text-xl font-bold text-left motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ">Causas principales:</h1>
+      <ol class={`grid grid-cols-1 md:grid-cols-${columns} gap-y-8 md:gap-y-12 my-4`}>
+        {
+          [
+            { title: 'Falta de automatización', description: 'El registro y control se realiza de forma manual.' },
+            {
+              title: 'Errores humanos frecuentes',
+              description: 'La dependencia de métodos manuales incrementa los riesgos de omisiones e inexactitudes.',
+            },
+            {
+              title: 'Ausencia de herramientas de análisis',
+              description:
+                'No se dispone de software o sistemas que permitan generar reportes o proyecciones sobre las existencias y las ventas.',
+            },
+            {
+              title: 'Falta de capacitación',
+              description:
+                'El personal no está familiarizado con el uso de herramientas tecnológicas para la gestión de inventarios.',
+            },
+          ].map((item, index) => (
+            <li class="max-w-none flex flex-col items-start motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ">
+              <span class="font-bold text-xl mb-1 flex gap-2">
+                <b class="text-blue-700 border-2 border-blue-700 rounded-full w-8 h-8 flex justify-center">
+                  {index + 1}
+                </b>
+                {item.title}
+              </span>{' '}
+              {/* Título con numeración */}
+              {item.description /* Verifica si hay una descripción */ && (
+                <p class="text-xl text-muted mt-1 text-justify">{item.description}</p>
+              )}
+            </li>
+          ))
+        }
+      </ol>
+
+      <h1 class="my-8 text-xl font-bold text-left motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ">Consecuencias principales:</h1>
+
+      <ol class={`grid grid-cols-1 md:grid-cols-${columns} gap-y-8 md:gap-y-12`}>
+        {
+          [
+            {
+              title: 'Desabastecimiento o sobrestock',
+              description:
+                'Se genera una mala planificación de pedidos, afectando la disponibilidad de productos o generando pérdidas por acumulación excesiva.',
+            },
+            {
+              title: 'Aumento de costos operativos',
+              description:
+                'El tiempo y los recursos invertidos en gestionar inventarios de forma manual afectan la eficiencia del negocio.',
+            },
+            {
+              title: 'Baja satisfacción del cliente',
+              description: 'La falta de productos esenciales reduce la confianza y fidelidad de los consumidores.',
+            },
+            {
+              title: 'Pérdidas económicas',
+              description:
+                'Las ineficiencias en el control de inventarios impactan directamente en los márgenes de ganancia del negocio.',
+            },
+          ].map((item, index) => (
+            <li class="max-w-none flex flex-col items-start motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade ">
+              <span class="font-bold text-xl mb-1 flex gap-2">
+                <b class="text-blue-700 border-2 border-blue-700 rounded-full w-8 h-8 flex justify-center">
+                  {index + 1}
+                </b>
+                {item.title}
+              </span>
+              {item.description && <p class="text-xl text-muted mt-1 text-justify">{item.description}</p>}
+            </li>
+          ))
+        }
+      </ol>
+<!-- 
+      <ImageCard 
+      src="https://via.placeholder.com/150" 
+      alt="Imagen de ejemplo 3" 
+      borderRadius="50%" 
+      /> -->
+
+      <ImageCard src="/diagramas/arbol_de_problemas.jpg" alt="Arbol de Problemas" />
+      <ImageCard src="/diagramas/detalle_arbol_de_problemas.jpg" alt="Arbol de Problemas" />
+
     </Fragment>
   </Hero>
 

@@ -1,0 +1,36 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import type { Faqs as Props } from '~/types';
+
+const {
+  title = '',
+  subtitle = '',
+  tagline = '',
+  items = [],
+  columns = 2,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+  
+  <ol class={`grid grid-cols-1 md:grid-cols-${columns} gap-y-8 md:gap-y-12`}>
+    {items.map((item) => (
+      <li class="max-w-none flex flex-col items-start">
+        <span class="font-bold text-xl mb-1">{item.title}</span> <!-- Solo título sin numeración -->
+        
+        {item.description && (  /* Verifica si hay una descripción */
+          <p class="text-xl text-muted mt-1 text-justify">
+            {item.description}
+          </p>
+        )}
+      </li>
+    ))}
+  </ol>
+</WidgetWrapper>
