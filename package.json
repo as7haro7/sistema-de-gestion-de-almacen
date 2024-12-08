@@ -1,7 +1,7 @@
 {
-  "name": "sistema-de-gestion-de-inventario",
+  "name": "sistema-de-gestion-de-almacen",
   "version": "1.0.0",
-  "description": "Sistema de Inventarios desarrollado con Astro y Tailwind CSS para la materia de Análisis y Diseño de Sistemas.",
+  "description": "Sistema de almacenes desarrollado con Astro y Tailwind CSS para la materia de Análisis y Diseño de Sistemas.",
   "type": "module",
   "private": true,
   "engines": {
@@ -24,10 +24,11 @@
   "dependencies": {
     "@astrojs/rss": "^4.0.8",
     "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/vercel": "^8.0.0",
     "@astrolib/analytics": "^0.6.1",
     "@astrolib/seo": "^1.0.0-beta.8",
     "@fontsource-variable/inter": "^5.1.0",
-    "astro": "^4.16.2",
+    "astro": "^4.8.0",
     "astro-embed": "^0.7.4",
     "astro-icon": "^1.1.1",
     "limax": "4.1.0",
