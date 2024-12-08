@@ -1,0 +1,55 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import StructuredText from '~/components/widgets/StructuredText.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Introducción',
+};
+
+const sections = [
+  { name: 'Marco Teórico', description: 'se definen los conceptos, antecedentes y el problema que se busca resolver' },
+  {
+    name: 'Análisis y Diseño Estructurado',
+    description: 'detalla los modelos que representan el sistema desde un enfoque funcional',
+  },
+  {
+    name: 'Análisis y Diseño Orientado a Objetos',
+    description: 'profundiza en el diseño detallado del sistema, incluyendo diagramas UML y la arquitectura',
+  },
+  {
+    name: 'Conclusiones y Recomendaciones',
+    description: 'se reflexiona sobre los resultados obtenidos y se proponen mejoras futuras',
+  },
+];
+const freeText = `De esta manera, este proyecto busca contribuir a la mejora operativa del Minimarket Mamilus,
+asegurando una gestión de inventarios eficiente y alineada con los objetivos del negocio.`;
+---
+
+
+<Layout metadata={metadata}>
+  <Hero tagline=" Sistema de Gestion de almacen Minimarket ">
+   
+    <Fragment slot="title">
+      INTRODUCCIÓN <br />
+      <!-- <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span> -->
+    </Fragment>
+
+    <Fragment slot="content">
+      <StructuredText freeText={`El control eficiente de inventarios es esencial para el éxito de cualquier negocio minorista, especialmente en un minimarket donde la rotación de productos y la variedad de artículos son factores clave. El presente informe aborda el diseño y análisis de un sistema de gestión de inventarios para el Minimarket Mamilus, cuyo propósito es optimizar los procesos relacionados con el manejo de existencias, registro de productos, control de ingresos y salidas, y generación de reportes.
+`} />
+      <StructuredText freeText={`En la actualidad, muchas pequeñas empresas enfrentan problemas relacionados con la falta de automatización en sus procesos de inventario, lo que puede generar pérdidas económicas, desabastecimiento o exceso de productos. Por ello, surge la necesidad de implementar un sistema que no solo facilite la gestión de estos procesos, sino que también permita la toma de decisiones informadas basada en datos precisos y actualizados.
+`} />
+      <StructuredText freeText={`El desarrollo de este sistema se realizará aplicando los principios del análisis y diseño de sistemas, utilizando tanto metodologías estructuradas como orientadas a objetos. Estas herramientas permitirán garantizar que el sistema sea funcional, escalable y capaz de satisfacer las necesidades específicas del Minimarket Mamilus.`} />  
+      <StructuredText text="Este informe se estructura en cuatro capítulos: en el" sections={sections} />
+      <StructuredText freeText={`De esta manera, este proyecto busca contribuir a la mejora operativa del Minimarket Mamilus, asegurando una gestión de inventarios eficiente y alineada con los objetivos del negocio.
+`} />
+    </Fragment>
+
+  
+  </Hero>
+</Layout>
+
+<!--  -->

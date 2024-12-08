@@ -1,0 +1,36 @@
+---
+
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { systemData } from '~/content/texts';
+import ImageCard from '~/components/widgets/ImageCard.astro';
+
+
+const metadata = {
+  title: 'Planificación de Actividades',
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero tagline={systemData.projectTitle.concat(' ').concat(systemData.company)}>
+
+    <Fragment slot="title">
+      <span class="uppercase">Planificación de Actividades   </span> <br />
+      <!-- <span class="text-accent dark:text-white highlight">Método, Medios e Instrumentos de Investigación</span> -->
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <!-- <h1 class="text-xl font-bold">Diagrama De Gantt</h1> -->
+      Diagrama De Gantt
+    </Fragment>
+    <Fragment slot="content">
+      <div>
+        <ImageCard src="/diagramas/diagrama_gantt.jpg" alt="Diagrama De Gantt" />
+
+      </div>
+    </Fragment>
+
+  </Hero>
+
+  <!--  -->
+</Layout>

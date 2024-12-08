@@ -1,0 +1,33 @@
+---
+
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StructuredText from '~/components/widgets/StructuredText.astro';
+
+import { systemData } from '~/content/texts';
+
+
+const metadata = {
+  title: 'Formulación del Problema',
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Hero tagline={systemData.projectTitle.concat(' ').concat(systemData.company)}>
+
+
+    <Fragment slot="title">
+      <span class="uppercase">Formulación del Problema</span> <br />
+      <!-- <span class="text-accent dark:text-white highlight">Formulación del Problema</span> -->
+    </Fragment>
+
+    <Fragment slot="content">
+      <StructuredText freeText={`En el Minimarket Mamilus, la gestión actual de inventarios se realiza de manera manual, lo que genera inconsistencias en los registros, dificulta el seguimiento de productos y aumenta los riesgos de errores humanos. Estas deficiencias resultan en problemas como el desabastecimiento o el sobrestock de productos, pérdidas económicas, y una menor satisfacción del cliente.`} />
+      <StructuredText freeText={`Por lo tanto, surge la necesidad de desarrollar un sistema de gestión de inventarios automatizado que permita optimizar los procesos relacionados con el control de existencias, garantizando una operación más eficiente, precisa y alineada con las necesidades del negocio.`} />
+
+    </Fragment>
+  </Hero>
+
+  <!--  -->
+</Layout>
