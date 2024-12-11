@@ -2,7 +2,7 @@
 const { src, alt, borderRadius = "8px", width = "100%", height = "auto", boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)" } = Astro.props;
 ---
 
-<div class={`rounded-[${borderRadius}] shadow-[${boxShadow}] inline-block overflow-hidden`}>
+<div class={`rounded-[${borderRadius}] shadow-[${boxShadow}] inline-block overflow-hidden motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade `}>
   <a href={src} data-fancybox="gallery">
     <img src={src} alt={alt} class={`w-[${width}] h-[${height}] object-cover`} />
   </a>
